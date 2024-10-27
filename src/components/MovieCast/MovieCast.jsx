@@ -46,7 +46,7 @@ const MovieCast = () => {
   return (
     <div className={css.containerCast}>
       {loading && <Loader />}
-      {error && movies.length === 0 && <ErrorMessage message={error} />}
+      {error && cast.length === 0 && <ErrorMessage message={error} />}
       <h2 className={css.titleInfo}>Cast</h2>
       <ul className={css.listCast}>
         {cast.map((actor) => (

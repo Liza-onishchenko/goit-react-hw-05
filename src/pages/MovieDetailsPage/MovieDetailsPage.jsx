@@ -1,12 +1,13 @@
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
-
+import { Suspense, lazy } from "react";
 import {
   Outlet,
+  NavLink,
   useParams,
   useLocation,
-  NavLink,
   useNavigate,
+  Link,
 } from "react-router-dom";
 
 import Loader from "../../components/Loader/Loader";
@@ -55,19 +56,23 @@ const MovieDetailsPage = () => {
   const defaultImg =
     "https://dl-media.viber.com/10/share/2/long/vibes/icon/image/0x0/95e0/5688fdffb84ff8bed4240bcf3ec5ac81ce591d9fa9558a3a968c630eaba195e0.jpg";
 
-  // const backUrl = useRef(location.state ?? "/movies"); //повернення назад
-  // const goBack = () => navigate("backUrl.current"); // ф-я для повернення на попередню стр
+  const backUrl = useRef(location.state?.form || "/movies"); //повернення назад
 
-  const goBack = () => navigate("/");
+  // Перевірка значення from у location.state
+  const goBack = () => {
+    if (location.state && location.state.from) {
+      navigate(location.state.from.pathname); // Повернення на попередню стр
+    } else {
+      navigate("/movies");
+    }
+  };
 
   if (!movieData) return <div>No movie data available.</div>;
-
   return (
     <div className={css.listMovie}>
       {loading && <Loader />}
       {error && movies.length === 0 && <ErrorMessage message={error} />}
       <button onClick={goBack} className={css.buttonDetails}>
-        {" "}
         ← Go Back
       </button>
 
@@ -118,7 +123,9 @@ const MovieDetailsPage = () => {
           </NavLink>
         </li>
       </ul>
-      <Outlet />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 };

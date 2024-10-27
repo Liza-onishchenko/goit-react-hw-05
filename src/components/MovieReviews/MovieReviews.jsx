@@ -8,7 +8,6 @@ import css from "./MovieReviews.module.css";
 
 const MovieReviews = () => {
   const { movieId } = useParams();
-  console.log("Movie ID:", movieId);
 
   const [reviews, setReviews] = useState([]);
 
@@ -45,7 +44,7 @@ const MovieReviews = () => {
   return (
     <div className={css.containerRew}>
       {loading && <Loader />}
-      {error && movies.length === 0 && <ErrorMessage message={error} />}
+      {error && reviews.length === 0 && <ErrorMessage message={error} />}
       <h2>Reviews</h2>
       {reviews.length === 0 ? (
         <p>No reviews available.</p>
