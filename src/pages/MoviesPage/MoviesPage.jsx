@@ -21,7 +21,7 @@ const MoviesPage = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       if (!query) return; // Якщо запит порожній, виходимо з функції
-      console.log(query);
+
       try {
         setLoading(true);
 

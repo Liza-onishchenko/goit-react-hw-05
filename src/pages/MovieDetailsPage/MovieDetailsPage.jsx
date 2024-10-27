@@ -100,6 +100,7 @@ const MovieDetailsPage = () => {
         <h2>Additional information</h2>
         <li className={css.infoMovie}>
           <NavLink
+            state={{ from: location }}
             to="cast"
             className={({ isActive }) => (isActive ? "active" : "inactive")}
           >
@@ -108,6 +109,7 @@ const MovieDetailsPage = () => {
         </li>
         <li className={css.infoMovie}>
           <NavLink
+            state={{ from: location }}
             to="reviews"
             className={({ isActive }) => (isActive ? "active" : "inactive")}
           >
