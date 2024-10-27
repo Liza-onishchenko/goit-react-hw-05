@@ -58,23 +58,15 @@ const MovieDetailsPage = () => {
 
   const backUrl = useRef(location.state?.form || "/movies"); //повернення назад
 
-  // Перевірка значення from у location.state
-  const goBack = () => {
-    if (location.state && location.state.from) {
-      navigate(location.state.from.pathname); // Повернення на попередню стр
-    } else {
-      navigate("/movies");
-    }
-  };
-
   if (!movieData) return <div>No movie data available.</div>;
   return (
     <div className={css.listMovie}>
       {loading && <Loader />}
       {error && movies.length === 0 && <ErrorMessage message={error} />}
-      <button onClick={goBack} className={css.buttonDetails}>
+      <Link to={backUrl.current} className={css.buttonDetails}>
+        {" "}
         ← Go Back
-      </button>
+      </Link>
 
       <div className={css.containerList}>
         <div className={css.imageContainer}>
