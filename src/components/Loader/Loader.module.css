@@ -1,0 +1,10 @@
+.loader {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  visibility: visible;
+}

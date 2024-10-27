@@ -1,0 +1,44 @@
+.listMovie {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.buttonDetails {
+  margin-left: 15px;
+  margin-top: 20px;
+  color: #feffff;
+  background-color: #0e0c48;
+  padding: 6px 12px;
+  border-radius: 4px;
+  box-shadow: 0px 2px 10px 1px var(--color-dark);
+}
+
+.containerList {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  border: 2px solid #535353;
+  box-shadow: 0px 2px 10px 1px var(--color-dark);
+}
+
+.imagesFilm {
+  width: 250px;
+}
+
+.textContainer {
+  max-width: 500px;
+  margin-left: 15px;
+}
+
+.listInfo {
+  margin-left: 0px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  border: 1px solid #535353;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.infoMovie {
+  font-size: 20px;
+}

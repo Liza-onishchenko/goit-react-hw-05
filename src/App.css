@@ -1,0 +1,25 @@
+#root {
+  max-width: 100%;
+  margin: 0;
+  padding: 0px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh; /* Висота на весь вьюпорт */
+  background-color: rgb(229, 229, 255);
+} /* Ваш колір */
+
+a {
+  text-decoration: none; /* Прибирає підкреслення */
+}
+
+p {
+  font-size: 20px;
+}
+
+h2 {
+  font-size: 20px;
+}
